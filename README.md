@@ -11,7 +11,8 @@ Some handy tools for Sketch
 ### Align To Key Object
 ![AlignTo Gif](https://github.com/webpatch/Handy-Tools/raw/master/Screenshot/AlignTo.gif)
 
-#### Align Direction
+Align Direction  
+
 ![Direction Info](https://github.com/webpatch/Handy-Tools/raw/master/Screenshot/dir_info.png)
 
 ### Equal Spacing
