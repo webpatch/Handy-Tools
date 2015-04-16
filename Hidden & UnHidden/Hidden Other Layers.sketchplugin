@@ -1,0 +1,29 @@
+#import 'libs/common.js'
+
+function search(item,arr)
+{
+  for (var i = 0; i < [arr count]; i++) {
+    if(item === [arr objectAtIndex:i]) return true;  
+  }
+  return false;
+}
+
+function processAllLayers(layers, callback) {
+  for (var i = 0; i < [layers count]; i++) {
+    var layer = [layers objectAtIndex:i];
+    if (search(layer,selection)) continue;
+    if ([layer isMemberOfClass:[MSLayerGroup class]]) {
+      callback(layer);
+      processAllLayers([layer layers], callback);
+    }else {
+      callback(layer);
+    }
+  }
+}
+
+const layers = [artboard layers];
+if ([selection count] > 0){ 
+  processAllLayers(layers,function(layer){
+    [layer setIsVisible:false];
+  });
+}

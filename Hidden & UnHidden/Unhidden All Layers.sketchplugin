@@ -1,0 +1,20 @@
+#import 'libs/common.js'
+
+function processAllLayers(layers, callback) {
+    for (var i = 0; i < [layers count]; i++) {
+      var layer = [layers objectAtIndex:i];
+      if (isMeasure(layer)) continue;
+      if ([layer isMemberOfClass:[MSLayerGroup class]]) {
+        callback(layer);
+        processAllLayers([layer layers], callback);
+      }
+      else {
+        callback(layer);
+      }
+    }
+}
+
+const layers = [artboard layers];
+processAllLayers(layers,function(layer){
+  if(![layer isVisible])[layer setIsVisible:true];
+})
