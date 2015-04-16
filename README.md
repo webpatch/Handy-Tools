@@ -13,13 +13,6 @@ Some handy tools for Sketch
 
 #### Align Direction
 ![Direction Info](https://github.com/webpatch/Handy-Tools/raw/master/Screenshot/dir_info.png)
-* top
-* left
-* bottom
-* right
-* horizontal
-* vertical
-* center
 
 ### Equal Spacing
 ![spacing gif](https://raw.githubusercontent.com/webpatch/Handy-Tools/master/Screenshot/spacing.gif)
