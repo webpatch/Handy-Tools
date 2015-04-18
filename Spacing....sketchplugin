@@ -83,11 +83,11 @@ if([selection count] < 2){
 	  	switch(choice[2]){
 			case "⬌":
 				horizontalSpacing(spacing);
-				setConfig('lastDir',0);
+				setConfig('last_spacing_dir',0);
 				break;
 			case "⬍":
 				verticallSpacing(spacing);
-				setConfig('lastDir',1);
+				setConfig('last_spacing_dir',1);
 				break;
 		}
 	}
