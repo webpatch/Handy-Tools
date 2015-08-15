@@ -1,28 +1,43 @@
 #import 'libs/common.js'
 
-function search(item,arr)
+// get parent groups
+
+const cls = [MSArtboardGroup class];
+var skipGroups = [[NSMutableArray alloc]init];
+function getParentGroup(layer)
 {
-  for (var i = 0; i < [arr count]; i++) {
-    if(item === [arr objectAtIndex:i]) return true;  
+  const group = layer.parentGroup();
+  if ([group isMemberOfClass:cls] == 0 )
+  {
+    skipGroups.addObject(group);
+    getParentGroup(group);
+  }else{
+    return;
   }
-  return false;
 }
 
-function processAllLayers(layers, callback) {
+for (var i = 0; i < [selection count]; i++) {
+  var s = [selection objectAtIndex:i];
+  getParentGroup(s);
+  skipGroups.addObject(s); // add selection
+}
+
+function processAllLayers(layers,callback) {
+  const MAX_COUNT = [skipGroups count]
   for (var i = 0; i < [layers count]; i++) {
     var layer = [layers objectAtIndex:i];
-    if (search(layer,selection)) continue;
+    var isSkip = [skipGroups indexOfObject:layer] < MAX_COUNT // skip selection and it's parents
     if ([layer isMemberOfClass:[MSLayerGroup class]]) {
-      callback(layer);
       processAllLayers([layer layers], callback);
-    }else {
-      callback(layer);
     }
+    if (!isSkip) callback(layer);
   }
 }
 
+// init
+
 const layers = [artboard layers];
-if ([selection count] > 0){ 
+if ([selection count] > 0){
   processAllLayers(layers,function(layer){
     [layer setIsVisible:false];
   });
