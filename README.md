@@ -22,6 +22,6 @@ Align Direction
 
 ![hidden preview](https://raw.githubusercontent.com/webpatch/Handy-Tools/master/Screenshot/hidden.png)
 
-* Hidden Other Layers (Exclude seleted layers)
+* Hidden Other Layers (Exclude selected layers)
 * Unhidden All Layers
 * Unhidden Current Page's All Layers
