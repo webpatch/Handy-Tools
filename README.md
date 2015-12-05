@@ -1,6 +1,9 @@
 # Handy-Tools
 Some handy tools for Sketch
 
+##Require
+Skecth 3.3+
+
 ##Installing Plugins
 
 1. [Download the ZIP file](https://github.com/webpatch/Handy-Tools/raw/master/release/HandyTools.sketchplugin.zip)
