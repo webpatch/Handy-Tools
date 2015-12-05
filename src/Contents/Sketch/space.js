@@ -1,4 +1,4 @@
-#import 'libs/common.js'
+@import 'libs/common.js'
 
 var lastDir = getConfig('last_spacing_dir');
 lastDir = lastDir == null ? 1 : parseInt(lastDir)
@@ -49,7 +49,7 @@ function sort_by_position_top(a,b){
   return [[a frame] top] - [[b frame] top];
 }
 
-function horizontalSpacing(spacing)
+function horizontalSpacing(spacing,selection)
 {
 	var sorted_selection = toJSArray(selection).sort(sort_by_position_left),
 	    first_element = sorted_selection[0],
@@ -61,7 +61,7 @@ function horizontalSpacing(spacing)
 	});
 }
 
-function verticallSpacing(spacing)
+function verticallSpacing(spacing,selection)
 {
 	var sorted_selection = toJSArray(selection).sort(sort_by_position_top),
 	    first_element = sorted_selection[0],
@@ -73,22 +73,27 @@ function verticallSpacing(spacing)
 	});
 }
 
-if([selection count] < 2){
-  [doc showMessage:"Please select 2 or more layers."]
-}else {
-	var choice = createAlert("Layers Spacing")
-	if (choice[0] == 1000)
-	{
-		var spacing = choice[1];
-	  	switch(choice[2]){
-			case "⬌":
-				horizontalSpacing(spacing);
-				setConfig('last_spacing_dir',0);
-				break;
-			case "⬍":
-				verticallSpacing(spacing);
-				setConfig('last_spacing_dir',1);
-				break;
+var onRun = function(context) {
+	var doc = context.document;
+  	var selection = context.selection;
+
+	if([selection count] < 2){
+  		[doc showMessage:"Please select 2 or more layers."];
+	}else {
+		var choice = createAlert("Layers Spacing");
+		if (choice[0] == 1000)
+		{
+			var spacing = choice[1];
+		  	switch(choice[2]){
+				case "⬌":
+					horizontalSpacing(spacing,selection);
+					setConfig('last_spacing_dir',0);
+					break;
+				case "⬍":
+					verticallSpacing(spacing,selection);
+					setConfig('last_spacing_dir',1);
+					break;
+			}
 		}
 	}
 }

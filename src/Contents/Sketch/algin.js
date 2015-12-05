@@ -1,7 +1,7 @@
-#import 'libs/common.js'
+@import 'libs/common.js'
 
 var lastDir = getConfig('last_algin_dir');
-lastDir = lastDir == null ? 1 : parseInt(lastDir)
+lastDir = lastDir == null ? 1 : parseInt(lastDir);
 
 function disableCell(cell)
 {
@@ -20,7 +20,7 @@ function qq(cellArr,idxArr,call)
 
 function createAlert(msg, items, selectedItemIndex)
 {
-	selectedItemIndex = selectedItemIndex || 0
+	selectedItemIndex = selectedItemIndex || 0;
 	var viewBox = [[NSBox alloc] initWithFrame:NSMakeRect(0, 0, 0, 0)];
 	[viewBox setTitle:""];
 	[viewBox setTransparent:true];
@@ -134,7 +134,7 @@ var fnObj = {
     }
 }
 
-function getSeletedLayersName()
+function getSeletedLayersName(selection)
 {
 	var layers = [];
 	for (var i=0; i < [selection count]; i++){
@@ -144,26 +144,32 @@ function getSeletedLayersName()
 	return layers;
 }
 
-if([selection count] < 2){
-  [doc showMessage:"Please select 2 or more layers."]
-}else {
-	var choice = createAlert('Align relative to', getSeletedLayersName(), 0)
-	if (choice[0] == 1000)
-	{
-		var direction = choice[2],
-			getKeyPosition = fnObj[direction].getKeyPosition,
-			alignObj = fnObj[direction].alignObj,
-			index = choice[1],
-			keyLayer = [selection objectAtIndex:index],
-			keyFrame = [keyLayer frame];
+var onRun = function (context){
+    var doc = context.document;
+    var selection = context.selection;
 
-		getKeyPosition(keyFrame)
-		for (var i=0; i < [selection count]; i++){
-		  layer = [selection objectAtIndex:i]
-		  frame = [layer frame]
-		  alignObj(frame)
-		}
+    if([selection count] < 2){
+        [doc showMessage:"Please select 2 or more layers."]
+    }else {
+        var choice = createAlert('Align relative to', getSeletedLayersName(selection), 0);
+        if (choice[0] == 1000)
+        {
+            var direction = choice[2],
+                getKeyPosition = fnObj[direction].getKeyPosition,
+                alignObj = fnObj[direction].alignObj,
+                index = choice[1],
+                keyLayer = [selection objectAtIndex:index],
+            keyFrame = [keyLayer frame];
 
-		setConfig('last_algin_dir',fnObj[direction].position);
-	}
-}
+            getKeyPosition(keyFrame)
+            for (var i=0; i < [selection count]; i++){
+                layer = [selection objectAtIndex:i]
+                frame = [layer frame]
+                alignObj(frame)
+            }
+
+            setConfig('last_algin_dir',fnObj[direction].position);
+        }
+    }
+};
+

@@ -3,8 +3,8 @@ Some handy tools for Sketch
 
 ##Installing Plugins
 
-1. [Download the ZIP file](https://github.com/webpatch/Handy-Tools/archive/master.zip)
-2. Extract the files to the plugin folder (Open up Sketch, and go to Plugins › Reveal Plugins Folder… to open it.)
+1. [Download the ZIP file](https://github.com/webpatch/Handy-Tools/release/HandyTools.sketchplugin.zip)
+2. Extract the files, dobule click the "HandyTools.sketchplugin", it will install automatic.
 3. You can find these tools in Sketch's "plugins" menu
 
 ## Feature

@@ -1,6 +1,13 @@
-#import 'libs/common.js'
+@import 'libs/common.js'
 
-function processAllLayers(layers, callback) {
+var onRun = function(context){
+  const selection = context.selection,
+      doc = context.document,
+      page = [doc currentPage],
+      artboard = [page currentArtboard],
+      layers = [artboard layers];
+
+  function processAllLayers(layers, callback) {
     for (var i = 0; i < [layers count]; i++) {
       var layer = [layers objectAtIndex:i];
       if (isMeasure(layer)) continue;
@@ -8,16 +15,13 @@ function processAllLayers(layers, callback) {
         callback(layer);
         processAllLayers([layer layers], callback);
       }
-      else {
+    else {
         callback(layer);
       }
     }
-}
+  }
 
-for (var j = 0; j < [artboards count]; j++){
-  var artboard = [artboards objectAtIndex:j];
-  var layers = [artboard layers];
   processAllLayers(layers,function(layer){
-    if(![layer isVisible]) [layer setIsVisible:true];
+    if(![layer isVisible])[layer setIsVisible:true];
   })
 }

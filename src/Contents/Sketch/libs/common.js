@@ -1,11 +1,14 @@
-const page = [doc currentPage],
-      artboard = [page currentArtboard],
-      artboards = [doc artboards],
-      selection = context.selection,
-      doc = context.document,
-      current = artboard ? artboard : page,
-      prefix = 'kiny',
-      measureRegEx = /\$SIZE|\$WIDTH|\$HEIGHT|\$DISTANCE|\$PROPERTY|\$LABEL|\$OVERLAYER|\$COORDINATE/;
+// const page = [doc currentPage],
+//       artboard = [page currentArtboard],
+//       artboards = [doc artboards],
+//       selection = context.selection,
+//       doc = context.document,
+//       current = artboard ? artboard : page,
+const prefix = 'kiny',
+    measureRegEx = /\$SIZE|\$WIDTH|\$HEIGHT|\$DISTANCE|\$PROPERTY|\$LABEL|\$OVERLAYER|\$COORDINATE/;
+
+
+
 
 function isMeasure(layer)
 {
