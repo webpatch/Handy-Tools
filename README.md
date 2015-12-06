@@ -6,7 +6,7 @@ Skecth 3.3+
 
 ##Installing Plugins
 
-1. [Download the ZIP file](https://github.com/webpatch/Handy-Tools/raw/master/release/HandyTools.sketchplugin.zip)
+1. [Download the ZIP file](https://github.com/webpatch/Handy-Tools/releases/download/v1.1/HandyTools.sketchplugin.zip)
 2. Extract the files, dobule click the "HandyTools.sketchplugin", it will install automatic.
 3. You can find these tools in Sketch's "plugins" menu
 
