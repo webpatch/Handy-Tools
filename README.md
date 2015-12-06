@@ -4,6 +4,10 @@ Some handy tools for Sketch
 ##Require
 Skecth 3.3+
 
+##Changelog
+###v1.1
+Solved multi-level layer's align /space problem 
+
 ##Installing Plugins
 
 1. [Download the ZIP file](https://github.com/webpatch/Handy-Tools/releases/download/v1.1/HandyTools.sketchplugin.zip)
