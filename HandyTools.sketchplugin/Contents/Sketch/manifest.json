@@ -1,0 +1,61 @@
+{
+  "name": "Handy Tools",
+  "description": "Some handy tools for Sketch",
+  "author": "webpatch",
+  "homepage": "https://github.com/webpatch/Handy-Tools",
+  "version": 1.1,
+  "identifier": "com.hikiny.sketch.handytools",
+  "compatibleVersion": 3,
+  "commands": [
+    {
+      "name": "Algin to...",
+      "identifier": "algin",
+      "shortcut": "ctrl shift a",
+      "script": "algin.js",
+      "handler": "onRun"
+    },
+    {
+      "name": "Space...",
+      "identifier": "space",
+      "shortcut": "ctrl shift s",
+      "script": "space.js",
+      "handler": "onRun"
+    },
+    {
+      "name": "Hidden others",
+      "identifier": "hideOthers",
+      "shortcut": "",
+      "script": "hidden_others.js",
+      "handler": "onRun"
+    },
+    {
+      "name": "Unhidden all",
+      "identifier": "unhiddenAll",
+      "shortcut": "",
+      "script": "unhidden_all.js",
+      "handler": "onRun"
+    },
+    {
+      "name": "Unhidden all Artboards",
+      "identifier": "unhiddenAllArtboards",
+      "shortcut": "",
+      "script": "unhidden_all_artboard.js",
+      "handler": "onRun"
+    }
+  ],
+  "menu": {
+    "items": [
+      "algin",
+      "space",
+      {
+        "title": "Hidden & Unhidden",
+        "items": [
+          "hideOthers",
+          "unhiddenAll",
+          "unhiddenAllArtboards"
+        ]
+      }
+    ],
+    "title": "Handy Tools"
+  }
+}
