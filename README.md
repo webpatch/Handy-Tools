@@ -6,7 +6,7 @@ Skecth 3.3+
 
 ##Changelog
 ###v1.1
-Solved multi-level layer's align /space problem 
+* Solved multi-level layer's align /space problem 
 
 ##Installing Plugins
 
