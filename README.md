@@ -2,7 +2,7 @@
 Some handy tools for Sketch
 
 ##Require
-Skecth 3.3+
+Sketch 3.3+
 
 ##Changelog
 ###v1.1
