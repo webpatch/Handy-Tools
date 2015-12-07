@@ -6,12 +6,12 @@ Sketch 3.3+
 
 ##Changelog
 ###v1.1
-* Solved multi-level layer's align /space problem 
+* Solved multi-level layer's align and space problem 
 
-##Installing Plugins
+##Installing Plugin
 
-1. [Download the ZIP file](https://github.com/webpatch/Handy-Tools/releases/download/v1.1/HandyTools.sketchplugin.zip)
-2. Extract the files, dobule click the "HandyTools.sketchplugin", it will install automatic.
+1. [Download Plugin](https://github.com/webpatch/Handy-Tools/releases/download/v1.1/HandyTools.sketchplugin.zip)
+2. Extract the zip file, dobule click the "HandyTools.sketchplugin", it will install automatic.
 3. You can find these tools in Sketch's "plugins" menu
 
 ## Feature
@@ -29,6 +29,6 @@ Align Direction
 
 ![hidden preview](https://raw.githubusercontent.com/webpatch/Handy-Tools/master/Screenshot/hidden.png)
 
-* Hidden Other Layers (Exclude selected layers)
-* Unhidden All Layers
-* Unhidden Current Page's All Layers
+* Hidden other layers (exclude selected layers)
+* Unhidden all layers
+* Unhidden all artboard's layers
