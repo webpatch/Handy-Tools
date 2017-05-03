@@ -1,14 +1,14 @@
 # Handy-Tools
 Some handy tools for Sketch
 
-##Require
+## Require
 Sketch 3.3+
 
-##Changelog
-###v1.1
+## Changelog
+### v1.1
 * Solved multi-level layer's align and space problem 
 
-##Installing Plugin
+## Installing Plugin
 
 1. [Download Plugin](https://github.com/webpatch/Handy-Tools/releases/download/v1.1/HandyTools.sketchplugin.zip)
 2. Extract the zip file, dobule click the "HandyTools.sketchplugin", it will install automatic.
